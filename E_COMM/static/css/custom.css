@@ -1,0 +1,57 @@
+/* Navbar & Header Gradient */
+.section-header {
+    background: linear-gradient(180deg, #f8f9fa 0%, #e0e4e9 50%, #cfd6de 100%);
+    padding-bottom: 10px;
+    border-bottom: 2px solid #b2bec3;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navbar */
+.navbar {
+    background: transparent; /* Keeps navbar transparent to blend with the gradient */
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    color: #333 !important;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff !important;
+}
+
+/* Category Dropdown */
+.category-wrap .btn-primary {
+    background: #007bff;
+    border-color: #0056b3;
+}
+
+.category-wrap .dropdown-menu {
+    background: #ffffff;
+    border: 1px solid #ccc;
+}
+
+/* Search Bar Styling */
+.search .form-control {
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.search .btn-primary {
+    border-radius: 50%;
+}
+
+/* Cart & User Section */
+.widget-header a {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.widget-header .icon {
+    background: #ffffff;
+    color: #007bff;
+    padding: 5px;
+    border-radius: 50%;
+}
