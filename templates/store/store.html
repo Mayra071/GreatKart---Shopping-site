@@ -25,6 +25,9 @@
                         <div class="filter-content collapse show" id="collapse_1" style="">
                             <div class="card-body">
                                 <ul class="list-menu">
+                                    <li >
+                                        <a href="{% url 'store' %}">All products</a>
+                                    </li>
                                     {% for category in categories %}
                                         <li><a href="{% url 'product_by_category' category.slug_field %}">{{ category.Category_name | upper }}</a></li>
                                     {% endfor %}
@@ -50,7 +53,7 @@
                             </div> <!-- img-wrap.// -->
                             <figcaption class="info-wrap">
                                 <div class="fix-height">
-                                    <a href="./product-detail.html" class="title">item name goes here</a>
+                                    <a href="./product-detail.html" class="title">{{ product.product_name }}</a>
                                     <div class="price-wrap mt-2">
                                         <span class="price">₹{{ product.price }}</span>
                                     </div> <!-- price-wrap.// -->
