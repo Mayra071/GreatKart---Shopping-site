@@ -54,12 +54,12 @@
                                 </li>
                             </ul>
                             {%for category in links%}
-                            <a class="dropdown-item" href="{% url 'product_by_category' category.slug_field %}">{{category.Category_name}}</a>
+                            <a class="dropdown-item" href="{{ category.get_url }}">{{category.Category_name | upper}}</a>
                             {% endfor %}
                         </div>
                     </div>  <!-- category-wrap.// -->
                 </div> <!-- col.// -->
-                <a href="./store" class="btn btn-outline-primary">Store</a>
+                <a href="{% url 'store' %}" class="btn btn-outline-primary">Store</a>
                 <div class="col-lg  col-md-6 col-sm-12 col">
                     <form action="#" class="search">
                         <div class="input-group w-100">

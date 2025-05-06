@@ -25,11 +25,10 @@
                         <div class="filter-content collapse show" id="collapse_1" style="">
                             <div class="card-body">
                                 <ul class="list-menu">
-                                    <li >
-                                        <a href="{% url 'store' %}">All products</a>
+                                    <li >   <a href="{% url 'store' %}">All products</a>
                                     </li>
-                                    {% for category in categories %}
-                                        <li><a href="{% url 'product_by_category' category.slug_field %}">{{ category.Category_name | upper }}</a></li>
+                                    {% for category in links %}
+                                        <li><a href="{{ category.get_url }}">{{ category.Category_name | upper }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </div> <!-- card-body.// -->
@@ -40,9 +39,12 @@
             </aside> <!-- col.// -->
             <main class="col-md-9">
                 <header class="border-bottom mb-4 pb-3">
-                    <div class="form-inline">
-                        <span class="mr-md-auto">{{ product_count }} Items found </span>
-                    </div>
+                    <div class="form-inline" style="display: flex; justify-content: flex-start; align-items: center; padding: 10px 20px; background: linear-gradient(to left, #f9f9f9, #d3d3d3); border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                        <span class="mr-md-auto" style="font-size: 16px; font-weight: 500; color: #333; margin-left: 10px;">
+                            {{ product_count }} Items found
+                        </span>
+                    </div>                    
+                    
                 </header><!-- sect-heading -->
                 <div class="row">
                     {% for product in products %}
@@ -66,7 +68,7 @@
                 </div> <!-- row -->
                 <nav class="mt-4" aria-label="Page navigation sample">
                     <ul class="pagination">
-                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
                         <li class="page-item active"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
