@@ -24,10 +24,9 @@
         {%for product in products%}
         <div class="col-md-3">
             <div class="card card-product-grid">
-                <a href="./product-detail.html" class="img-wrap"> <img src="{{ product.image.url }}" alt="{{ product.product_name }}">
-                </a>
+                <a href="{{product.get_absolute_url}}" class="img-wrap"> <img src="{{ product.image.url }}" alt="{{ product.product_name }}"></a>
                 <figcaption class="info-wrap">
-                    <a href="./product-detail.html" class="title">{{product.product_name}}</a>
+                    <a href="{% product.get_absolute_url %}" class="title">{{product.product_name}}</a>
                     <div class="price mt-1">₹{{product.price}}</div> <!-- price-wrap.// -->
                     <a href="#" class="btn btn-block btn-success">Add to cart </a>
                 </figcaption>

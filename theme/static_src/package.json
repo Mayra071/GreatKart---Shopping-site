@@ -21,5 +21,8 @@
     "postcss-simple-vars": "^7.0.1",
     "rimraf": "^6.0.1",
     "tailwindcss": "^4.1.0"
+  },
+  "dependencies": {
+    "theme": "file:"
   }
 }

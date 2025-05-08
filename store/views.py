@@ -16,10 +16,15 @@ def store(request, category_slug=None):
         # Retrieve all categories
     context = {
         'products': products,
-        'categories': categories,  # Add categories to context
-        'product_count': product_count,  # Add product count to context
+        'categories': categories,  
+        'product_count': product_count,   
 
 
     }
     # Ensure this function is correctly implemented
     return render(request, 'store/store.html', context)
+
+
+def product_detail(request, category_slug, product_slug):
+    return render(request, 'store/product_detail.html')
+    
