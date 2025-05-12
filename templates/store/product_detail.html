@@ -74,7 +74,7 @@
             <strong>Out of Stock</strong>
         </div>
         {% else %}
-           <a href="{% url 'store'%}" class="btn  btn-primary"> <span class="text">Add to cart</span> <i class="fas fa-shopping-cart"></i>  </a>
+           <a href="{% url 'add_cart' single_product.id %}" class="btn  btn-primary"> <span class="text">Add to cart</span> <i class="fas fa-shopping-cart"></i>  </a>
         {% endif %}
       </article> <!-- product-info-aside .// -->
             </main> <!-- col.// -->

@@ -1,4 +1,3 @@
-
 """
 Django settings for E_COMM project.
 
@@ -40,6 +39,8 @@ INSTALLED_APPS = [
     'category',
     'accounts',
     'store',
+    'cart',
+    
     'tailwind',
     'theme',
     'django_browser_reload',
@@ -76,6 +77,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'category.context_processors.menu_links',
+                'store.context_processors.counter',
             ],
         },
     },

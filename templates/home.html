@@ -28,7 +28,7 @@
                 <figcaption class="info-wrap">
                     <a href="{{ product.get_absolute_url }}" class="title">{{product.product_name}}</a>
                     <div class="price mt-1">₹{{product.price}}</div> <!-- price-wrap.// -->
-                    <a href="#" class="btn btn-block btn-success">Add to cart </a>
+                    <a href="{% url 'add_cart' product.id %}" class="btn btn-block btn-success">Add to cart</a>
                 </figcaption>
             </div>
         </div> <!-- col.// -->
