@@ -51,7 +51,7 @@
                     <div class="col-md-4">
                         <figure class="card card-product-grid">
                             <div class="img-wrap"> 
-                                <img src="{{ product.image.url }}" alt="{{ product.product_name }}">    
+                                <a href="{{product.get_absolute_url}}" class="img-wrap"> <img src="{{ product.image.url }}" alt="{{ product.product_name }}"></a>   
                             </div> <!-- img-wrap.// -->
                             <figcaption class="info-wrap">
                                 <div class="fix-height">
