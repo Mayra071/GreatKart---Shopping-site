@@ -10,11 +10,15 @@ A full-featured e-commerce platform built with Django, featuring product managem
   - Stock management
   - Price tracking
   - Product availability status
+  - Data integrity protection
+  - Category relationship validation
 
 - **Category Management**
   - Hierarchical category organization
   - Category-specific product listings
   - Category images and descriptions
+  - Protected category deletion
+  - Category validation
 
 - **User Interface**
   - Responsive design
@@ -31,6 +35,8 @@ A full-featured e-commerce platform built with Django, featuring product managem
   - Image handling
   - URL routing
   - Admin interface
+  - Data validation
+  - Error handling
 
 ## Installation
 
@@ -92,6 +98,22 @@ E_COMM/
 - Added validation for product-category relationships
 - Implemented data integrity protection
 - Improved error handling for product updates
+- Added category protection to prevent accidental deletion
+- Implemented model validation for data consistency
+
+## Model Changes
+
+### Product Model
+- Added category relationship protection
+- Implemented validation for category existence
+- Added data integrity checks
+- Improved error handling for product updates
+- Added fallback URL handling for products without categories
+
+### Category Model
+- Protected against accidental deletion
+- Added validation for category relationships
+- Improved data consistency checks
 
 ## Contributing
 
