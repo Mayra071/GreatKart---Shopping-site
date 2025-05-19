@@ -7,7 +7,17 @@
 <div class="container">
 
 <!-- ============================ COMPONENT 1 ================================= -->
-
+{% if not cart_items %}
+<div class="text-center" style="padding: 50px 0;">
+    <div class="alert alert-info" role="alert" style="max-width: 500px; margin: 0 auto;">
+        <h2 class="mb-4">Your cart is empty</h2>
+        <p class="mb-4">Looks like you haven't added any items to your cart yet.</p>
+        <a href="{% url 'store' %}" class="btn btn-primary btn-lg" style="min-width: 200px; transition: all 0.3s ease; box-shadow: 0 2px 5px rgba(0,0,0,0.1); background-color: #007bff;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)'; this.style.backgroundColor='#0056b3';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.1)'; this.style.backgroundColor='#007bff';">
+            <i class="fas fa-shopping-cart mr-2"></i>Start Shopping
+        </a>
+    </div>
+</div>
+{% else %}
 <div class="row">
 	<aside class="col-lg-9">
 <div class="card">
@@ -46,7 +56,7 @@
 	</td>
 	<td> 
 		<div class="price-wrap"> 
-			<var class="price">₹{{ cart_item.product.price }}</var> 
+			<var class="price">₹{{ cart_item.item_total }}</var>
 			<small class="text-muted">₹{{ cart_item.product.price }} each </small> 
 		</div> <!-- price-wrap .// -->
 	</td>
@@ -88,7 +98,7 @@
 
 </div> <!-- row.// -->
 <!-- ============================ COMPONENT 1 END .// ================================= -->
-
+{% endif %}
 </div> <!-- container .//  -->
 </section>
 <!-- ========================= SECTION CONTENT END// ========================= -->
