@@ -3,10 +3,11 @@
 {% block content %}
 
 <!-- ========================= SECTION PAGETOP ========================= -->
-<section class="section-pagetop bg">
+<section class="section-pagetop bg" style="background: linear-gradient(135deg, #E3F2FD 0%, #90CAF9 100%); padding: 50px 0; margin-bottom: 30px;">
     <div class="container">
-        <h2 class="title-page">Our Store</h2>
-    </div> <!-- container //  -->
+        <h2 class="title-page" style="color: #1565C0; text-align: center; font-size: 2.5rem; font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">Our Store</h2>
+        <p class="text-center" style="color: #1976D2; margin-top: 10px;">Discover amazing products at great prices</p>
+    </div>
 </section>
 
 <!-- ========================= SECTION CONTENT ========================= -->
@@ -39,12 +40,12 @@
             </aside> <!-- col.// -->
             <main class="col-md-9">
                 <header class="border-bottom mb-4 pb-3">
-                    <div class="form-inline" style="display: flex; justify-content: flex-start; align-items: center; padding: 10px 20px; background: linear-gradient(to left, #f9f9f9, #d3d3d3); border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                    <div class="form-inline" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: linear-gradient(to left, #f9f9f9, #d3d3d3); border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
                         <span class="mr-md-auto" style="font-size: 16px; font-weight: 500; color: #333; margin-left: 10px;">
                             {{ product_count }} Items found
                         </span>
+                        
                     </div>                    
-                    
                 </header><!-- sect-heading -->
                 <div class="row">
                     {% for product in products %}

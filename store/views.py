@@ -13,10 +13,10 @@ def store(request, category_slug=None):
     
     if category_slug is not None:
         categories = [get_object_or_404(Category, slug_field=category_slug)]
-        products = Product.objects.filter(category=categories[0].id, is_available=True)
+        products = Product.objects.filter(category=categories[0].id, is_available=True).order_by('id')
         product_count = products.count()
     else:
-        products = Product.objects.all().filter(is_available=True)
+        products = Product.objects.all().filter(is_available=True).order_by('id')
         categories = list(Category.objects.all())
         product_count = products.count()
 
@@ -59,4 +59,20 @@ def product_detail(request, category_slug, product_slug):
         # 'categories': Category.objects.all(),
     }
     return render(request, 'store/product_detail.html',context)
+
+def search(request):
+    if 'keyword' in request.GET:
+        keyword = request.GET['keyword']
+        if keyword:
+            products = Product.objects.order_by('-created_date').filter(product_name__icontains=keyword) | Product.objects.filter(description__icontains=keyword)
+            product_count = products.count()
+    else:
+        products = Product.objects.none()
+        product_count = 0
+    
+    context = {
+        'products': products,
+        'product_count': product_count,
+    }
+    return render(request, 'store/store.html', context)
     

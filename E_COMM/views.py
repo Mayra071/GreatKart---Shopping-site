@@ -5,7 +5,7 @@ from cart.models import Cart, CartItem
 from django.core.paginator import Paginator
 
 def home(request):
-    products = Product.objects.all().filter(is_available=True)
+    products = Product.objects.all().filter(is_available=True).order_by('id')
     
     # Get cart items to check which products are in cart
     try:
