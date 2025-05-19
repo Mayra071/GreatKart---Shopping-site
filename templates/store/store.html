@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
 <!-- ========================= SECTION PAGETOP ========================= -->
 <section class="section-pagetop bg" style="background: linear-gradient(135deg, #E3F2FD 0%, #90CAF9 100%); padding: 50px 0; margin-bottom: 30px;">
     <div class="container">
+        {% if 'search' in request.path %}
+        <h2 class="title-page" style="color: #1565C0; text-align: center; font-size: 2.5rem; font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">Search result</h2>
+        {% else %}
         <h2 class="title-page" style="color: #1565C0; text-align: center; font-size: 2.5rem; font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">Our Store</h2>
         <p class="text-center" style="color: #1976D2; margin-top: 10px;">Discover amazing products at great prices</p>
+        {% endif %}
     </div>
 </section>
 
